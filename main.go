@@ -17,6 +17,7 @@ type T struct {
 	Chords []string `yaml:"chords"`
 	Keywords []string `yaml:"keywords"`
 	Usages []string `yaml:"usages"`
+	Remarks []string `yaml:"remarks"`
 }
 
 func main() {
@@ -32,6 +33,9 @@ func main() {
 		}),
 		Usages: getStringArray("Number of usages", func(i int) string {
 			return fmt.Sprintf("Usage %d", i)
+		}),
+		Remarks: getStringArray("Number of remarks", func(i int) string {
+			return fmt.Sprintf("Remark %d", i)
 		}),
 	}
 
